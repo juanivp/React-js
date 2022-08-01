@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import Greeting from './Greeting';
 
 const ItemListContainer = () => {
 
@@ -19,12 +20,14 @@ const ItemListContainer = () => {
         description: 'Lenia que dura mas y genera mas calor.',
         imgUrl: '/images/card-quebracho.jpg'
     }
-    
+    const greeting = "Esta semana en promocion:"
+
     return (
         <div className='container-lg border border-4 border-rounded mx-2 p-3 '>
+            <Greeting data={greeting} />
             <div className="row">
-            <Card data={dataProduct} />
-            <Card data={dataProduct2} />
+                <Card data={dataProduct} />
+                <Card data={dataProduct2} />
             </div>
         </div>
     )
