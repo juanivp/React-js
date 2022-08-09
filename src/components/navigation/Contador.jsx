@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const Contador = (props) => {
     console.log(props.stock, props.initial); /* Valor máximo del contador */
 
-    const [clicks, setClicks] = React.useState(props.initial); /* hook de estado */
+    const [clicks, setClicks] = useState(props.initial); /* hook de estado */
 
     const handleIncrement = () => {
         if (clicks < props.stock) {
