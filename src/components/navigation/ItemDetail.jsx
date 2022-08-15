@@ -1,6 +1,4 @@
 import React from 'react'
-import React, { useEffect, useState } from 'react';
-
 
 function ItemDetail( {name, description, imgUrl, price} ) {
   return (

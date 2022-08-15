@@ -2,7 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import  CartWidget  from './CartWidget';
 
+// si el navbar fuera muy largo podria hacer lo siguiente:
+// const navBar = [{url: "/Inicio", title: "Homepage"},
+//                  {url: "/Lenia", title: "Lenia"}, 
+//                  {url: "/Herramientas", title: "Herramientas"}, 
+//                   etc]
 
+// navBar.map(enlace => <Link to={enlace.url}>{enlace.title}</Link>)
 
 const Navbar = () => {
     return (
@@ -21,10 +27,10 @@ const Navbar = () => {
                                 <Link className="nav-link active" to="/">Inicio</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to='/Productos'>Productos</Link>
+                                <Link className="nav-link" to='/Lenia'>Leña</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/Promociones">Promociones</Link>
+                                <Link className="nav-link" to="/Herramientas">Herramientas</Link>
                             </li>
                             <CartWidget />
                         </ul>
