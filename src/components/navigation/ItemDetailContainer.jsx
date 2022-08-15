@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import arrayProducts from '../../data/data'
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
+import getProductos from '../helpers/getProduct';
 
-function getProducto() {
-    return new Promise((resolve) => {
-        setTimeout(() => { resolve(arrayProducts.find(producto => producto.id = {item})) }, 0);
-    })
+
+function ItemDetailContainer(props) {
+    // const { idUrl } = useParams();
+    // console.log(idUrl);
+
+    const [item, setItem] = useState([]);
+
+    useEffect(
+        () => {
+            getProductos( { idUrl } = useParams() ).then((respuesta) => {
+                setItem(respuesta)
+            }
+            )
+        }, []
+    )
+
+    console.log(item)
+
+    return (
+        <>
+            <ItemDetail item={setItem} />
+        </>
+    )
 }
-
-    function ItemDetailContainer() {
-        const [item, setItem] = useState([]);
-
-        useEffect(
-            () => {
-                getProducto().then((respuesta) => {
-                    setItem(respuesta)
-                }
-                )
-            }, []
-        )
-        
-
-        return (
-            <>
-            <ItemDetail item={2} />
-            </>
-        )
-    }
 
 export default ItemDetailContainer

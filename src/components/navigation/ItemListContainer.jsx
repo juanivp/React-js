@@ -2,14 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import Greeting from './Greeting';
 import arrayProducts from '../../data/data'
+import getProductos from '../helpers/getProduct';
 
-
-function getProductos() {
-    return new Promise((resolve) => {
-        setTimeout(() => { resolve(arrayProducts) }, 0);
-    })
-}
-
+getProductos();
 
 const ItemListContainer = () => {
     const [data, setData] = useState([]);
@@ -30,14 +25,15 @@ const ItemListContainer = () => {
         <div className='container-lg border border-4 border-rounded mx-2 p-3 '>
             <Greeting data={greeting} />
             <div className="row">
-                {data.map((cadaLenia) => {
+                {data.map((cadaProducto) => {
                     return (
                         <Card
-                            key={cadaLenia.id}
-                            name={cadaLenia.name}
-                            price={cadaLenia.price}
-                            description={cadaLenia.description}
-                            imgUrl={cadaLenia.imgUrl}
+                            key={cadaProducto.id}
+                            name={cadaProducto.name}
+                            price={cadaProducto.price}
+                            description={cadaProducto.description}
+                            imgUrl={cadaProducto.imgUrl}
+                            id={cadaProducto.id}
                         />
                     );
                 })}
