@@ -1,23 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
 import Greeting from './Greeting';
 import arrayProducts from '../../data/data'
 import getProductos from '../helpers/getProduct';
+import { useParams } from 'react-router-dom';
+import ItemList from './ItemList';
 
-getProductos();
+
 
 const ItemListContainer = () => {
     const [data, setData] = useState([]);
+    const idCategory = useParams().idCategory
+
+    // useEffect(
+    //     () => {
+    //         getProductos().then((products) => {
+    //             setData(respuesta)
+    //         }
+    //         )
+    //     }, []
+    // )
 
     useEffect(
         () => {
-            getProductos().then((respuesta) => {
-                setData(respuesta)
-            }
-            )
-        }, []
-    )
-    console.log(arrayProducts)
+            getProductos().then(products => {
+                let itemsFilter = arrayProducts.filter((element) => element.category === idCategory)
+                if (idCategory === undefined) {
+                    setData(products)
+                }
+                else {
+                    setData(itemsFilter)
+                }
+            })
+
+        }, [idCategory])
+
+
 
     const greeting = "Esta semana en promocion:"
 
@@ -25,21 +42,10 @@ const ItemListContainer = () => {
         <div className='container-lg border border-4 border-rounded mx-2 p-3 '>
             <Greeting data={greeting} />
             <div className="row">
-                {data.map((cadaProducto) => {
-                    return (
-                        <Card
-                            key={cadaProducto.id}
-                            name={cadaProducto.name}
-                            price={cadaProducto.price}
-                            description={cadaProducto.description}
-                            imgUrl={cadaProducto.imgUrl}
-                            id={cadaProducto.id}
-                        />
-                    );
-                })}
+                <ItemList data={data} />
             </div>
         </div>
     )
-}
+    }
 
-export default ItemListContainer
+    export default ItemListContainer

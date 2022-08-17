@@ -5,9 +5,6 @@ function getProductos() {
     return new Promise((resolve) => {
         setTimeout(() => { resolve(arrayProducts) }, 0);
     })
-    return (
-        <div>getProduct</div>
-    )
 }
 
 export default getProductos

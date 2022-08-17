@@ -17,24 +17,19 @@ function App() {
         {/* <Contador stock={12} initial={1} /> */}
         {/* <ItemDetailContainer/> */}
         <Routes>
-          <Route exact path='/' element={
-            <ItemListContainer />
-          } />
-          <Route exact path='/detalle/:id'  element={
-            <ItemDetailContainer />
-          } />
-          <Route exact path='/Lenia'  element={
-            <Lenia/>
-          } />
-          <Route exact path='/Herramientas' element={
-            <Herramientas/>
-          } />
-          <Route exact path='/Cart' element={
-            <Cart/>
-          } />
-          <Route exact path='*' element={
-            <h1>Virtual 404: Pagina no encontrada</h1>
-          } />
+          <Route exact path='/' element={<ItemListContainer />} />
+
+          <Route exact path='detalle/:id'  element={<ItemDetailContainer />} />
+
+          <Route exact path='category/:idCategory' element={<ItemListContainer />} />
+
+          {/* <Route exact path='/Lenia'  element={<Lenia/>} />
+
+          <Route exact path='/Herramientas' element={<Herramientas/>} /> */}
+
+          <Route exact path='/Cart' element={<Cart/>} />
+
+          <Route exact path='*' element={<h1>Virtual 404: Pagina no encontrada</h1>} />
         </Routes>
       </Router>
     </div>
