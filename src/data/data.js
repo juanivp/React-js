@@ -6,7 +6,8 @@ const arrayProducts = [
 		"capacidad-calorica": 812,
 		"price": 2323,
 		"imgUrl": "../images/cardEncina.jpg",
-		"category": "lenia"
+		"category": "lenia",
+		"stock" : 12
 	},
 	{
 		"id": 2,
@@ -15,7 +16,8 @@ const arrayProducts = [
 		"capacidad-calorica": 1027,
 		"price": 1904,
 		"imgUrl": "../images/cardRoble.jpg",
-		"category": "lenia"
+		"category": "lenia",
+		"stock" : 12
 	},
 	{
 		"id": 3,
@@ -24,7 +26,8 @@ const arrayProducts = [
 		"capacidad-calorica": 1226,
 		"price": 936,
 		"imgUrl": "../images/cardOlivo.jpg",
-		"category": "lenia"
+		"category": "lenia",
+		"stock" : 12
 	},
 	{
 		"id": 4,
@@ -33,7 +36,8 @@ const arrayProducts = [
 		"capacidad-calorica": 900,
 		"price": 2989,
 		"imgUrl": "../images/cardPino.jfif",
-		"category": "lenia"
+		"category": "lenia",
+		"stock" : 12
 	},
 	{
 		"id": 5,
@@ -42,7 +46,8 @@ const arrayProducts = [
 		"capacidad-calorica": 1343,
 		"price": 2725,
 		"imgUrl": "../images/cardEspinillo.webp",
-		"category": "lenia"
+		"category": "lenia",
+		"stock" : 12
 	},
 	{
 		"id": 6,
@@ -51,7 +56,8 @@ const arrayProducts = [
 		"capacidad-calorica": 1353,
 		"price": 2352,
 		"imgUrl": "../images/cardAlgarrobo.jpg",
-		"category": "lenia"
+		"category": "lenia",
+		"stock" : 12
 	},
 	{
 		"id": 7,
@@ -60,7 +66,8 @@ const arrayProducts = [
 		"capacidad-calorica": 1353,
 		"price": 2352,
 		"imgUrl": "../images/cardquebracho.png",
-		"category": "lenia"
+		"category": "lenia",
+		"stock" : 12
 	},
 	{
 		"id": 8,
@@ -68,7 +75,8 @@ const arrayProducts = [
 		"description": "Para remover el fuego, habilitando una mayor entrada de oxigeno",
 		"price": 2352,
 		"imgUrl": "../images/cardAtizador.jpg",
-		"category": "herramienta"
+		"category": "herramienta",
+		"stock" : 12
 	},
 	{
 		"id": 9,
@@ -76,7 +84,8 @@ const arrayProducts = [
 		"description": "No hace falta que te explique para que sirve.",
 		"price": 2352,
 		"imgUrl": "../images/cardPala.jpg",
-		"category": "herramienta"
+		"category": "herramienta",
+		"stock" : 12
 	},
 	{
 		"id": 10,
@@ -84,7 +93,8 @@ const arrayProducts = [
 		"description": "Para que no agarres las brasas con la mano.",
 		"price": 2352,
 		"imgUrl": "../images/cardPinza.jpg",
-		"category": "herramienta"
+		"category": "herramienta",
+		"stock" : 12
 	},
 	{
 		"id": 11,
@@ -92,7 +102,8 @@ const arrayProducts = [
 		"description": "Para limpiar la chimenea.",
 		"price": 2352,
 		"imgUrl": "../images/cardEscobilla.jpg",
-		"category": "herramienta"
+		"category": "herramienta",
+		"stock" : 12
 	}
 ]
 export default arrayProducts

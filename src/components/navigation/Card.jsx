@@ -1,5 +1,6 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
+import Button from './Button';
 
 const Card = ( {name, description, imgUrl, price, id} ) => {
 
@@ -12,7 +13,9 @@ const Card = ( {name, description, imgUrl, price, id} ) => {
                     <h5 className="card-title">{name}</h5>
                     <h6>${price}</h6>
                     <p className="card-text">{description}</p>
-                    <button><Link to={`/detalle/${id}`} >Ver mas</Link></button>
+                    <Link to={`/detalle/${id}`} >
+                        <Button onTouch ={() => alert(`Clickeado: ${name}`)} text="Ver mas">Ver mas</Button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -18,14 +18,14 @@ const Contador = (props) => {
         }
     };
 
-    const onAdd = () => {
-        if (props.stock > 0) {
-            alert(`Agregaste ${clicks} unidades al carrito.`)
-        }
-        else {
-            alert(`No hay suficiente stock de este producto.`)
-        }
-    }
+    // const onAdd = () => {
+    //     if (props.stock > 0) {
+    //         alert(`Agregaste ${clicks} unidades al carrito.`)
+    //     }
+    //     else {
+    //         alert(`No hay suficiente stock de este producto.`)
+    //     }
+    // }
 
     return (
 
@@ -35,7 +35,7 @@ const Contador = (props) => {
             <h3>Clicks: {clicks}</h3>
             <button onClick={handleIncrement}>sumar</button>
             <hr />
-            <button onClick={onAdd}>Finalizar Compra</button>
+            <button onClick={() => props.onAdd(clicks)}>Finalizar Compra</button>
         </div>
     )
 }

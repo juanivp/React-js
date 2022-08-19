@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
-import getProductos from '../helpers/getProduct';
 import arrayProducts from '../../data/data';
 
 
