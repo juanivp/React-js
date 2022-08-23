@@ -17,16 +17,7 @@ const Contador = (props) => {
             setClicks(clicks - 1);
         }
     };
-
-    // const onAdd = () => {
-    //     if (props.stock > 0) {
-    //         alert(`Agregaste ${clicks} unidades al carrito.`)
-    //     }
-    //     else {
-    //         alert(`No hay suficiente stock de este producto.`)
-    //     }
-    // }
-
+    
     return (
 
         <div>
