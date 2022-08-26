@@ -58,7 +58,8 @@ return (
         isInCart,
         clearCart,
         totalPrice,
-        totalProducts
+        totalProducts,
+        cart,
     }}>
         {children}
     </CartContext.Provider>
