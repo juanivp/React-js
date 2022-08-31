@@ -5,20 +5,9 @@ import getProductos from '../helpers/getProduct';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 
-
-
 const ItemListContainer = () => {
     const [data, setData] = useState([]);
     const idCategory = useParams().idCategory
-
-    // useEffect(
-    //     () => {
-    //         getProductos().then((products) => {
-    //             setData(respuesta)
-    //         }
-    //         )
-    //     }, []
-    // )
 
     useEffect(
         () => {
@@ -33,7 +22,6 @@ const ItemListContainer = () => {
             })
 
         }, [idCategory])
-
 
 
     const greeting = "Esta semana en promocion:"
