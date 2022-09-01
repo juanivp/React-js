@@ -1,28 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import Greeting from './Greeting';
-import arrayProducts from '../../data/data'
-import getProductos from '../helpers/getProduct';
+import { getProductos, getProductosByCategory } from '../helpers/getProduct';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 
 const ItemListContainer = () => {
     const [data, setData] = useState([]);
-    const idCategory = useParams().idCategory
+    const statusFromParams = useParams().idCategory
 
     useEffect(
         () => {
-            getProductos().then(products => {
-                let itemsFilter = arrayProducts.filter((element) => element.category === idCategory)
-                if (idCategory === undefined) {
-                    setData(products)
-                }
-                else {
-                    setData(itemsFilter)
-                }
-            })
-
-        }, [idCategory])
-
+            if (statusFromParams === undefined) {
+                getProductos().then((response) => {
+                    setData(response);
+                });
+            }
+            else {
+                getProductosByCategory(statusFromParams).then((response) =>
+                    setData(response));
+            }}, []);
 
     const greeting = "Esta semana en promocion:"
 
@@ -34,6 +30,6 @@ const ItemListContainer = () => {
             </div>
         </div>
     )
-    }
+}
 
-    export default ItemListContainer
+export default ItemListContainer
