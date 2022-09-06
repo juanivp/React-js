@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
             getProductoById(idFromParams).then(product => {
                 setData(product)
             })
-        }, []);
+        }, [idFromParams]);
 
 return (
     <>

@@ -7,12 +7,15 @@ import ItemListContainer from './components/navigation/ItemListContainer';
 import Cart from './components/pages/Cart';
 import ItemDetailContainer from './components/navigation/ItemDetailContainer';
 import CartProvider from './context/CartContext';
+import firestoreDB from './services/firebase';
+
 
 //seteo un contexto por default en el carrito
 const CartContext = React.createContext('');
 
 
 function App() {
+  console.log(firestoreDB)
   return (
     <div className="App">
       <Router>

@@ -18,7 +18,7 @@ const ItemListContainer = () => {
             else {
                 getProductosByCategory(statusFromParams).then((response) =>
                     setData(response));
-            }}, []);
+            }}, [statusFromParams]);
 
     const greeting = "Esta semana en promocion:"
 
