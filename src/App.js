@@ -2,13 +2,13 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import Navbar from './components/navigation/Navbar';
+import Navbar from './components/navigation/Navbar/Navbar';
 import ItemListContainer from './components/navigation/ItemListContainer';
 import Cart from './components/pages/Cart';
 import ItemDetailContainer from './components/navigation/ItemDetailContainer';
 import CartProvider from './context/CartContext';
 import firestoreDB from './services/firebase';
-
+import About from './components/navigation/About/About';
 
 //seteo un contexto por default en el carrito
 const CartContext = React.createContext('');
@@ -21,6 +21,7 @@ function App() {
       <Router>
         <CartProvider>
         <Navbar />
+        {/* <About /> */}
         <Routes>
           <Route exact path='/' element={<ItemListContainer />} />
           <Route exact path='detalle/:id'  element={<ItemDetailContainer />} />

@@ -46,7 +46,7 @@ function CartProvider({ children }) {
 
     // funcion que recorre el array y va sumando la propiedad quantity de cada producto, guardandola en el acumulador e iniciando en 0    
     const totalProducts = () => {
-        cart.reduce ((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
+        return cart.reduce ((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
     }
 
 

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Contador = (props) => {
-    console.log(props.stock, props.initial); /* Valor máximo del contador */
 
     const [clicks, setClicks] = useState(props.initial); /* hook de estado */
 
@@ -26,8 +25,9 @@ const Contador = (props) => {
             <h3>Clicks: {clicks}</h3>
             <button onClick={handleIncrement}>sumar</button>
             <hr />
-            <Link className="nav-link" to="/Cart">
+            
             <button onClick={() => props.onAdd(clicks)}>Finalizar Compra</button>
+            <Link className="nav-link" to="/Cart">
             </Link>
         </div>
     )

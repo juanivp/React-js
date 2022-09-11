@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ItemCart from '../navigation/ItemCart/ItemCart';
 
 function Cart() {
-  const { cart, totalPrice } = useCartContext();
+  const { cart, totalPrice, clearCart } = useCartContext();
 
   if (cart.length === 0) {
     return(
@@ -21,6 +21,7 @@ function Cart() {
         cart.map(product => <ItemCart key={product.id} product={product}/>)
       }
       <p>Total: ${totalPrice()}</p>
+      <button onClick={clearCart}>Borrar seleccion</button>
     </>
   );
 }
