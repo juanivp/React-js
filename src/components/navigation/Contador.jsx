@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from './Button/Button';
 
 const Contador = (props) => {
 
@@ -17,16 +18,16 @@ const Contador = (props) => {
         }
     };
     
-    return (
+    return (        
 
         <div>
             <h3>Item Counter</h3>
-            <button onClick={handleDecrement}>restar</button>
+            <Button onTouch={handleDecrement} type='alert'>restar</Button>
             <h3>Clicks: {clicks}</h3>
-            <button onClick={handleIncrement}>sumar</button>
+            <Button onTouch={handleIncrement}>sumar</Button>
             <hr />
             
-            <button onClick={() => props.onAdd(clicks)}>Finalizar Compra</button>
+            <Button onTouch={() => props.onAdd(clicks)}>Finalizar Compra</Button>
             <Link className="nav-link" to="/Cart">
             </Link>
         </div>

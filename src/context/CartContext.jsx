@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-
+import { Link } from 'react-router-dom';
 
 const CartContext = React.createContext([]);
 
@@ -22,6 +22,7 @@ function CartProvider({ children }) {
             setCart([...cart, { ...item, quantity: quantity }]);
             //si el producto no esta en el carrito, seteo un nuevo carrito con la info del anterior y le sumo un item nuevo con su quantity
         }
+        
     }
 
 

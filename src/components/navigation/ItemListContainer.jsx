@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Greeting from './Greeting';
 import { getProductos, getProductosByCategory } from '../helpers/getProduct';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
+import Spinner from './Spinner/Spinner';
+
 
 const ItemListContainer = () => {
     const [data, setData] = useState([]);
@@ -18,17 +19,18 @@ const ItemListContainer = () => {
             else {
                 getProductosByCategory(statusFromParams).then((response) =>
                     setData(response));
-            }}, [statusFromParams]);
-
-    const greeting = "Esta semana en promocion:"
+            }
+        }, [statusFromParams]);
 
     return (
-        <div className='container-lg border border-4 border-rounded mx-2 p-3 '>
-            <Greeting data={greeting} />
-            <div className="row">
-                <ItemList data={data} />
+        data.length === 0 ?
+            <Spinner />
+            :
+            <div className='container-lg border border-4 border-rounded mx-2 p-3 '>
+                <div className="row">
+                    <ItemList data={data} />
+                </div>
             </div>
-        </div>
     )
 }
 

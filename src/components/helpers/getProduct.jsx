@@ -1,12 +1,6 @@
 import firestoreDB from '../../services/firebase';
 import { getDocs, getDoc, collection, query, where, doc } from 'firebase/firestore';
 
-// funcion que comente para probar firebase. Si logro que funcione la borro definitivamente
-// function getProductos() {
-//     return new Promise((resolve) => {
-//         setTimeout(() => { resolve(arrayProducts) }, 500);
-//     });
-// };
 export function getProductos() {
     return new Promise((resolve) => {
 
