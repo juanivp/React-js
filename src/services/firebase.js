@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
-
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,7 +12,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const firestoreDB = getFirestore(app);
+
+const itemsdata = [];
+// Creo una nueva DB y por cada order hecha en mi app creo un item
+export async function saveProductsToFirebase() {
+  const ordersCollection = collection(firestoreDB, "orders");
+
+  for (let item of itemsdata) {
+    const docref = await addDoc(ordersCollection, item);
+    console.log("documento creado con id:", docref.id);
+  }
+}
 
 export default firestoreDB

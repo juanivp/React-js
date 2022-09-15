@@ -3,8 +3,11 @@ import "./userForm.css";
 import Button from '../../components/navigation/Button/Button';
 import { getDocs, collection, addDoc, query, where, writeBatch, documentId } from "firebase/firestore";
 import firestoreDB from "../../services/firebase";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useCartContext, totalPrice } from '../../context/CartContext';
 
+
+// traigo la info del carrito directamente por props 
 function UserForm({ cart }) {
     const [userData, setUserData] = useState({
         name: "",
@@ -18,18 +21,12 @@ function UserForm({ cart }) {
         complete: false,
     });
 
-    /* { buyer: { name, phone, email }, items: [{id, title, price}], total  } */
-
-    let total = 0;
-    cart.forEach((item) => {
-        total += item.price * item.quantity;
-    });
-    /* Array.reduce */
+    const { totalPrice } = useCartContext();
 
     const ordenDeCompra = {
         buyer: { ...userData },
         items: [...cart],
-        total: total,
+        total: totalPrice(),
         date: new Date(),
     };
 
@@ -39,6 +36,7 @@ function UserForm({ cart }) {
         const collectionRef = collection(firestoreDB, "orders");
         const order = await addDoc(collectionRef, ordenDeCompra);
         setOrderFirebase({ id: order.id, complete: true });
+
     }
 
     function inputChangeHandler(evt) {

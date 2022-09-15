@@ -2,7 +2,7 @@ import React from 'react'
 import { useCartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
 import ItemCart from '../navigation/ItemCart/ItemCart';
-import UserForm from '../UserForm/UserForm'
+import UserForm from '../UserForm/UserForm';
 
 function Cart() {
   const { cart, totalPrice, clearCart } = useCartContext();
@@ -22,8 +22,8 @@ function Cart() {
         cart.map(product => <ItemCart key={product.id} product={product}/>)
       }
       <p>Total: ${totalPrice()}</p>
-      <UserForm cart={cart}/>
       <button onClick={clearCart}>Borrar seleccion</button>
+      <UserForm cart={cart}/>
     </>
   );
 }
