@@ -3,8 +3,9 @@ import "./userForm.css";
 import Button from '../../components/navigation/Button/Button';
 import { getDocs, collection, addDoc, query, where, writeBatch, documentId } from "firebase/firestore";
 import firestoreDB from "../../services/firebase";
-import { useNavigate } from 'react-router-dom';
-import { useCartContext, totalPrice } from '../../context/CartContext';
+import { useCartContext, totalPrice, clearCart } from '../../context/CartContext';
+import swal from 'sweetalert';
+
 
 
 // traigo la info del carrito directamente por props 
@@ -15,13 +16,13 @@ function UserForm({ cart }) {
         telefono: "",
     });
 
-    let navigate = useNavigate();
     const [orderFirebase, setOrderFirebase] = useState({
         id: '',
         complete: false,
     });
 
     const { totalPrice } = useCartContext();
+    const { clearCart} = useCartContext();
 
     const ordenDeCompra = {
         buyer: { ...userData },
@@ -32,11 +33,13 @@ function UserForm({ cart }) {
 
     async function handleSubmit(evt) {
         evt.preventDefault();
-
+        // me conecto a firebase
         const collectionRef = collection(firestoreDB, "orders");
         const order = await addDoc(collectionRef, ordenDeCompra);
         setOrderFirebase({ id: order.id, complete: true });
-
+        swal(`Muchas gracias por tu compra, ${userData.name}😊`, `El ID de tu orden es ${order.id}`,"success");
+        // termino el submit borrando los datos del carrito
+        clearCart();
     }
 
     function inputChangeHandler(evt) {
@@ -57,15 +60,6 @@ function UserForm({ cart }) {
             email: "",
             telefono: "",
         });
-    }
-
-    if (orderFirebase.complete === true) {
-        return (
-            <div>
-                <h1>Gracias por tu compra!</h1>
-                <p>El id de seguimiento de tu compra es: {orderFirebase.id}</p>
-            </div>
-        );
     }
 
     return (
@@ -111,7 +105,7 @@ function UserForm({ cart }) {
                     <Button type="submit" onTouch={handleSubmit}>
                         Finalizar Compra
                     </Button>
-                    <Button type="reset">Vaciar Carrito</Button>
+                    <Button type="reset">Limpiar datos</Button>
                 </div>
             </form>
         </div>
