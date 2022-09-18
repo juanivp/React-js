@@ -8,7 +8,7 @@ import Cart from './components/pages/Cart';
 import ItemDetailContainer from './components/navigation/ItemDetailContainer';
 import CartProvider from './context/CartContext';
 import firestoreDB from './services/firebase';
-import About from './components/navigation/About/About';
+import Footer from './components/navigation/Footer/Footer';
 
 //seteo un contexto por default en el carrito
 const CartContext = React.createContext('');
@@ -21,7 +21,6 @@ function App() {
       <Router>
         <CartProvider>
         <Navbar />
-        {/* <About /> */}
         <Routes>
           <Route exact path='/' element={<ItemListContainer />} />
           <Route exact path='detalle/:id'  element={<ItemDetailContainer />} />
@@ -30,6 +29,7 @@ function App() {
           <Route exact path='*' element={<h1>Virtual 404: Pagina no encontrada</h1>} />
         </Routes>
         </CartProvider>
+        <Footer />
       </Router>
     </div>
   );

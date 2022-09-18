@@ -2,17 +2,10 @@ import React from 'react'
 import "./button.css";
 
 
-function Button({ text, type, onTouch, children }) {
-  const btnstyle = {
-    cursor: "pointer",
-    margin: "5px",
-    border: "none",
-    padding: "8px 16px",
-    backgroundColor: type === "alert" ? "#dd2240" : "#0077ee",
-  };
+function Button({ text, btnClass, onTouch, children }) {
 
   return (
-    <button type={type} onClick={onTouch} style={btnstyle} className="btn">
+    <button onClick={onTouch}  className={btnClass}>
       {text || children}
     </button>
   );

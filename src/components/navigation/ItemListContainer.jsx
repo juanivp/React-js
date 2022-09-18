@@ -3,6 +3,7 @@ import { getProductos, getProductosByCategory } from '../helpers/getProduct';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import Spinner from './Spinner/Spinner';
+import About from './About/About';
 
 
 const ItemListContainer = () => {
@@ -26,11 +27,14 @@ const ItemListContainer = () => {
         data.length === 0 ?
             <Spinner />
             :
+            <>
+            <About />
             <div className='container-lg border border-4 border-rounded mx-2 p-3 '>
                 <div className="row">
                     <ItemList data={data} />
                 </div>
             </div>
+            </>
     )
 }
 

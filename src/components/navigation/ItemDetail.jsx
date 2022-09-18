@@ -46,3 +46,4 @@ function ItemDetail({ data }) {
 }
 
 export default ItemDetail
+

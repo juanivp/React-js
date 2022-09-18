@@ -17,17 +17,18 @@ const Contador = (props) => {
             setClicks(clicks - 1);
         }
     };
-    
-    return (        
+
+    return (
 
         <div>
-            <h3>Item Counter</h3>
-            <Button onTouch={handleDecrement} type='alert'>restar</Button>
-            <h3>Clicks: {clicks}</h3>
-            <Button onTouch={handleIncrement}>sumar</Button>
+            <div className='btn-group'>
+                <Button onTouch={handleDecrement} btnClass="btn btn-primary" text="Restar" />
+                <h3 className="text-center">{clicks}</h3>
+                <Button onTouch={handleIncrement} btnClass="btn btn-primary" text="Sumar" />
+                
+            </div>
             <hr />
-            
-            <Button onTouch={() => props.onAdd(clicks)}>Finalizar Compra</Button>
+            <Button onTouch={() => props.onAdd(clicks)} btnClass="btn btn-success" text="Finalizar Compra" />
             <Link className="nav-link" to="/Cart">
             </Link>
         </div>

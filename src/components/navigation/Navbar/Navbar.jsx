@@ -10,7 +10,7 @@ const Navbar = () => {
                 <div className="container-fluid">
                 <p className="text-white text-decoration-none logoNavbar">RANCHO</p>
                     <Link to='/'>
-                        <img className="navbar-brand" src='./images/navbar.png' width='40' />
+                        <img src='./images/navbar.png' id="fueguito" />
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

@@ -1,8 +1,8 @@
-import React  from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from './Button/Button';
+import Button from '../navigation/Button/Button';
 
-const Card = ( {name, description, imgUrl, price, id} ) => {
+const Card = ({ name, description, imgUrl, price, id }) => {
 
     return (
 
