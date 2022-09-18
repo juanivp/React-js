@@ -102,10 +102,8 @@ function UserForm({ cart }) {
                 </div>
 
                 <div>
-                    <Button type="submit" onTouch={handleSubmit}>
-                        Finalizar Compra
-                    </Button>
-                    <Button type="reset">Limpiar datos</Button>
+                    <Button btnClass="btn btn-success" onTouch={handleSubmit} text="Finalizar compra" />
+                    <Button btnClass="btn btn-secondary" onTouch={handleReset} text="Borrar datos" />
                 </div>
             </form>
         </div>
