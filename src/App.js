@@ -10,6 +10,7 @@ import CartProvider from './context/CartContext';
 import firestoreDB from './services/firebase';
 import Footer from './components/navigation/Footer/Footer';
 
+
 //seteo un contexto por default en el carrito
 const CartContext = React.createContext('');
 

@@ -21,7 +21,7 @@ function Cart() {
 
   return (
     <>
-      <table class="table" >
+      <table class="table text-center" >
         <thead>
           <tr>
             <th scope="col">Producto</th>
@@ -36,16 +36,13 @@ function Cart() {
             cart.map(product => <ItemCart key={product.id} product={product} />)
           }
 
-
           <tr>
             <th scope='row'>TOTAL</th>
             <th></th>
             <th></th>
             <th>${totalPrice()}</th>
-            <th></th>
+            <th><Button text="Borrar seleccion" btnClass="btn btn-danger" onTouch={clearCart} /></th>
           </tr>
-
-
 
         </tbody>
       </table>
@@ -55,10 +52,3 @@ function Cart() {
 }
 
 export default Cart
-
-
-// {
-//   cart.map(product => <ItemCart key={product.id} product={product} />)
-// }
-//       <p>Total: ${totalPrice()}</p>
-//       <button onClick={clearCart}>Borrar seleccion</button>
