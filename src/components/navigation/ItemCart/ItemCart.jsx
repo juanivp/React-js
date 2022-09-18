@@ -4,7 +4,7 @@ import './itemCart.css';
 
 
 function ItemCart({product}) {
-    const {removeProduct,  clearCart} = useCartContext();
+    const {removeProduct} = useCartContext();
   return (
     <div className='itemCart'>
         <img src={product.imgUrl} alt={product.title} />

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./userForm.css";
 import Button from '../../components/navigation/Button/Button';
-import { getDocs, collection, addDoc, query, where, writeBatch, documentId } from "firebase/firestore";
+import {  collection, addDoc } from "firebase/firestore";
 import firestoreDB from "../../services/firebase";
-import { useCartContext, totalPrice, clearCart } from '../../context/CartContext';
+import { useCartContext } from '../../context/CartContext';
 import swal from 'sweetalert';
 
 

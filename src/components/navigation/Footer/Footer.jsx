@@ -6,7 +6,7 @@ function Footer() {
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark">
             <p className="col-md-4 mb-0 text-muted">® 2022 Rancho, Inc</p>
             <Link to="/" className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <img className='img-fluid' src='./images/navbar.png' id="fueguito" width="200" />
+                <img className='img-fluid' src='./images/navbar.png' id="fueguito" width="200" alt="fueguito"/>
             </Link>
             <ul class="nav col-md-4 justify-content-end ">
                 <li className="nav-item">

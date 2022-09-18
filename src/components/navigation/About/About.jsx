@@ -6,7 +6,7 @@ function About() {
   return (
 <div container-lg>
     <figure className="wp-caption">
-      <img className="demo" src="../images/landing.jpg" alt="Image" />
+      <img className="demo" src="../images/landing.jpg" alt="banner" />
       <h1 className='wp-caption-text'>Leña de origen regenerativo</h1>
     </figure>
     </div>

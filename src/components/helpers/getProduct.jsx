@@ -8,8 +8,7 @@ export function getProductos() {
 
         getDocs(ventaDeLeniacollection).then( snapshot => {
             const docsData = snapshot.docs.map (doc => {
-                return { ...doc.data(), id: doc.id}
-                doc.data()}
+                return { ...doc.data(), id: doc.id}}
                 );
             resolve(docsData)
         })
@@ -25,8 +24,7 @@ export function getProductosByCategory(categoryParam) {
 
         getDocs(q).then( snapshot => {
             const docsData = snapshot.docs.map (doc => {
-                return { ...doc.data(), id: doc.id}
-                doc.data()}
+                return { ...doc.data(), id: doc.id}}
                 );
             resolve(docsData)
         })
