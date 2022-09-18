@@ -22,9 +22,9 @@ const Contador = (props) => {
 
         <div>
             <div className='btn-group'>
-                <Button onTouch={handleDecrement} btnClass="btn btn-primary" text="Restar" />
-                <h3 className="text-center">{clicks}</h3>
-                <Button onTouch={handleIncrement} btnClass="btn btn-primary" text="Sumar" />
+                <Button onTouch={handleDecrement} btnClass="btn btn-primary" text="-" />
+                <h4 className="text-center">{clicks}</h4>
+                <Button onTouch={handleIncrement} btnClass="btn btn-primary" text="+" />
                 
             </div>
             <hr />
